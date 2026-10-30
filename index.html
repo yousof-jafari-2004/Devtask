@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مدیریت ساده و زیبای وظایف روزانه">
+  <title>دوتسک | مدیریت وظایف</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-icon">د</span> دوتسک<span class="dot">.</span></a>
+      <span class="saved">● ذخیره خودکار در مرورگر</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">فضای کاری شما</p>
+      <h1>برنامه‌ریزی کن، انجام بده<span class="dot">.</span></h1>
+      <p class="subtitle">ذهنی آرام با برنامه‌ای منظم شروع می‌شود.</p>
+    </section>
+
+    <section class="stats" aria-label="آمار وظایف">
+      <article class="stat"><span>کل وظایف</span><strong id="total">۰</strong></article>
+      <article class="stat"><span>در حال انجام</span><strong id="active">۰</strong></article>
+      <article class="stat"><span>انجام‌شده</span><strong id="done">۰</strong></article>
+    </section>
+
+    <section class="tasks-section">
+      <div class="section-heading">
+        <div><h2>وظایف شما</h2><p>کارهای مهمتان را مدیریت کنید.</p></div>
+        <button class="primary-btn" id="show-form">＋ افزودن وظیفه</button>
+      </div>
+
+      <form id="task-form" class="task-form hidden">
+        <input id="task-title" type="text" maxlength="90" placeholder="چه کاری باید انجام شود؟" required>
+        <select id="task-category" aria-label="دسته‌بندی">
+          <option value="برنامه‌نویسی">برنامه‌نویسی</option>
+          <option value="یادگیری">یادگیری</option>
+          <option value="شخصی">شخصی</option>
+          <option value="سایر">سایر</option>
+        </select>
+        <button class="submit-btn" type="submit">ثبت وظیفه</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="همه">همه</button>
+          <button class="filter" data-filter="برنامه‌نویسی">برنامه‌نویسی</button>
+          <button class="filter" data-filter="یادگیری">یادگیری</button>
+          <button class="filter" data-filter="شخصی">شخصی</button>
+          <button class="filter" data-filter="سایر">سایر</button>
+        </div>
+        <input id="search" class="search" type="search" placeholder="جست‌وجوی وظایف...">
+      </div>
+
+      <div id="task-list" class="task-list"></div>
+      <div class="list-footer"><span id="task-count">۰ وظیفه</span><button id="clear-done" class="text-btn">حذف وظایف انجام‌شده</button></div>
+    </section>
+    <footer>با برنامه‌ریزی بهتر، به هدف‌هایت برس.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
